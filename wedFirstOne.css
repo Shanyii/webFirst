@@ -1,0 +1,38 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family:Arial, sans-serif;
+    background-color: rgba(57, 57, 57, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery{
+    column-gap: 10px;
+}
+
+.gallery img{
+    width:180px;
+    height: auto;
+    margin: 5px;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out; /* 平滑轉場效果 */
+    object-fit: contain;
+}
+@media screen and (min-width: 800px) {
+    .gallery {
+        column-count: 3; /* 螢幕寬度大於 800px 時使用三列排列 */
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .gallery {
+        column-count: 1; /* 螢幕寬度小於等於 799px 時變為單列排列 */
+    }
+}
+.gallery img:hover {
+    transform: scale(1.1); /* 背景放大為原來的1.2倍 */
+}
+
+.gallery :hover{
+    background-size: 100% 100%;
+}
